@@ -32,24 +32,24 @@ $theme-colors: (
 @import "bootstrap/scss/bootstrap";
 
 :root {
-  --primary:   #{$primary};
-  --secondary: #{$secondary};
-  --success:   #{$success};
-  --warning:   #{$warning};
-  --danger:    #{$danger};
-  --info:      #{$info};
+    --primary:   #{$primary};
+    --secondary: #{$secondary};
+    --success:   #{$success};
+    --warning:   #{$warning};
+    --danger:    #{$danger};
+    --info:      #{$info};
 
-  --main-background: #{$body-bg};
-  --body-cl: #{$body-color};
-  --black: black;
-  --white: white;
+    --main-background: #{$body-bg};
+    --body-cl: #{$body-color};
+    --black: black;
+    --white: white;
 
-  --text-fs-0: 0.875rem;
-  --text-fs-1: 1rem;
-  --text-fs-2: 1.25rem;
-  --text-fs-3: 1.5rem;
-  --text-fs-4: 1.75rem;
-  --text-fs-5: 2rem;
+    --text-fs-0: 0.875rem;
+    --text-fs-1: 1rem;
+    --text-fs-2: 1.25rem;
+    --text-fs-3: 1.5rem;
+    --text-fs-4: 1.75rem;
+    --text-fs-5: 2rem;
 
     --title-fs-0: 1.5rem;
     --title-fs-1: 2rem;
