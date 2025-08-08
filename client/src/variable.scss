@@ -1,0 +1,53 @@
+/* 1) Önce override değişkenlerin */
+$brand-primary:   #2563EB;
+$brand-secondary: #64748B;
+$brand-success:   #10B981;
+$brand-warning:   #F59E0B;
+$brand-danger:    #EF4444;
+$brand-info:      #06B6D4;
+
+$body-bg:    #F5F5F5;
+$body-color: #0F172A;
+
+$primary:   $brand-primary;
+$secondary: $brand-secondary;
+$success:   $brand-success;
+$warning:   $brand-warning;
+$danger:    $brand-danger;
+$info:      $brand-info;
+
+$theme-colors: (
+  "primary":   $primary,
+  "secondary": $secondary,
+  "success":   $success,
+  "warning":   $warning,
+  "danger":    $danger,
+  "info":      $info
+);
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/bootstrap";
+
+:root {
+  --primary:   #{$primary};
+  --secondary: #{$secondary};
+  --success:   #{$success};
+  --warning:   #{$warning};
+  --danger:    #{$danger};
+  --info:      #{$info};
+
+  --main-background: #{$body-bg};
+  --body-cl: #{$body-color};
+  --black: black;
+  --white: white;
+
+  --text-fs-0: 0.875rem;
+  --text-fs-1: 1rem;
+  --text-fs-2: 1.25rem;
+  --text-fs-3: 1.5rem;
+  --text-fs-4: 1.75rem;
+  --text-fs-5: 2rem;
+}
