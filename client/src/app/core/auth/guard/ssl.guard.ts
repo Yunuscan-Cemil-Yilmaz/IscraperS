@@ -1,5 +1,5 @@
 import { CanMatchFn } from '@angular/router';
-import { environment } from '../../../environment/environment';
+import { environment } from '../../../../environment/environment';
 
 export const sslGuard: CanMatchFn = () => {
     if(typeof window == 'undefined') return true;

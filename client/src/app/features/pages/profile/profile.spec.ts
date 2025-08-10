@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ApplicationLayout } from './application-layout';
+import { Profile } from './profile';
 
-describe('ApplicationLayout', () => {
-  let component: ApplicationLayout;
-  let fixture: ComponentFixture<ApplicationLayout>;
+describe('Profile', () => {
+  let component: Profile;
+  let fixture: ComponentFixture<Profile>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ApplicationLayout]
+      imports: [Profile]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ApplicationLayout);
+    fixture = TestBed.createComponent(Profile);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
