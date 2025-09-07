@@ -1,4 +1,5 @@
-/* 1) Önce override değişkenlerin */
+@import "bootstrap/scss/functions";
+
 $brand-primary:   #2563EB;
 $brand-secondary: #64748B;
 $brand-success:   #10B981;
@@ -16,6 +17,31 @@ $warning:   $brand-warning;
 $danger:    $brand-danger;
 $info:      $brand-info;
 
+$tone-step: 15%;
+
+$primary-light:   tint-color($primary,   $tone-step);
+$primary-dark:    shade-color($primary,  $tone-step);
+
+$secondary-light: tint-color($secondary, $tone-step);
+$secondary-dark:  shade-color($secondary,$tone-step);
+
+$success-light:   tint-color($success,   $tone-step);
+$success-dark:    shade-color($success,  $tone-step);
+
+$warning-light:   tint-color($warning,   $tone-step);
+$warning-dark:    shade-color($warning,  $tone-step);
+
+$danger-light:    tint-color($danger,    $tone-step);
+$danger-dark:     shade-color($danger,   $tone-step);
+
+$info-light:      tint-color($info,      $tone-step);
+$info-dark:       shade-color($info,     $tone-step);
+
+$body-bg-light:   tint-color($body-bg,   $tone-step);
+$body-bg-dark:    shade-color($body-bg,  $tone-step);
+$body-cl-light:   tint-color($body-color,$tone-step);
+$body-cl-dark:    shade-color($body-color,$tone-step);
+
 $theme-colors: (
   "primary":   $primary,
   "secondary": $secondary,
@@ -25,48 +51,65 @@ $theme-colors: (
   "info":      $info
 );
 
-@import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/bootstrap";
 
 :root {
-    --primary:   #{$primary};
-    --secondary: #{$secondary};
-    --success:   #{$success};
-    --warning:   #{$warning};
-    --danger:    #{$danger};
-    --info:      #{$info};
+  --primary:         #{$primary};
+  --primary-light:   #{$primary-light};
+  --primary-dark:    #{$primary-dark};
 
-    --main-background: #{$body-bg};
-    --body-cl: #{$body-color};
-    --black: black;
-    --white: white;
+  --secondary:       #{$secondary};
+  --secondary-light: #{$secondary-light};
+  --secondary-dark:  #{$secondary-dark};
 
-    --text-fs-0: 0.875rem;
-    --text-fs-1: 1rem;
-    --text-fs-2: 1.25rem;
-    --text-fs-3: 1.5rem;
-    --text-fs-4: 1.75rem;
-    --text-fs-5: 2rem;
+  --success:         #{$success};
+  --success-light:   #{$success-light};
+  --success-dark:    #{$success-dark};
 
-    --title-fs-0: 1.5rem;
-    --title-fs-1: 2rem;
-    --title-fs-2: 2.5rem;
-    --title-fs-3: 3rem;
-    --title-fs-4: 3.5rem;
-    --title-fs-5: 4rem;
+  --warning:         #{$warning};
+  --warning-light:   #{$warning-light};
+  --warning-dark:    #{$warning-dark};
 
-    /* MARGIN-PADDING */
-    --mp-1: 0.25rem;
-    --mp-2: 0.5rem;
-    --mp-3: 1rem;
-    --mp-4: 1.5rem;
-    --mp-5: 2rem;
-    --mp-6: 3rem;
-    --mp-7: 4rem;
-    --mp-8: 5rem;
-    --mp-9: 6rem;
-    --mp-10: 7rem;
+  --danger:          #{$danger};
+  --danger-light:    #{$danger-light};
+  --danger-dark:     #{$danger-dark};
+
+  --info:            #{$info};
+  --info-light:      #{$info-light};
+  --info-dark:       #{$info-dark};
+
+  --main-background: #{$body-bg};
+  --body-cl: #{$body-color};
+  --black: black;
+  --white: white;
+  --shadow-color: #AAAAAA
+
+  --text-fs-0: 0.875rem;
+  --text-fs-1: 1rem;
+  --text-fs-2: 1.25rem;
+  --text-fs-3: 1.5rem;
+  --text-fs-4: 1.75rem;
+  --text-fs-5: 2rem;
+
+  --title-fs-0: 1.5rem;
+  --title-fs-1: 2rem;
+  --title-fs-2: 2.5rem;
+  --title-fs-3: 3rem;
+  --title-fs-4: 3.5rem;
+  --title-fs-5: 4rem;
+
+  /* MARGIN-PADDING */
+  --mp-1: 0.25rem;
+  --mp-2: 0.5rem;
+  --mp-3: 1rem;
+  --mp-4: 1.5rem;
+  --mp-5: 2rem;
+  --mp-6: 3rem;
+  --mp-7: 4rem;
+  --mp-8: 5rem;
+  --mp-9: 6rem;
+  --mp-10: 7rem;
 }
