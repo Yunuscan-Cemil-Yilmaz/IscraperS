@@ -3,13 +3,16 @@ import { LoaderService } from './loader.service';
 
 @Component({
   selector: 'app-loader',
+  standalone: true,
   imports: [],
   template: `
-    <div *ngIf="loading()" class="loader-main-area">
-      <div class="loader">
-        <img src="assets/images/logo/big-logo-black-yellow-circle-removebg.png" alt="loader logo">
+    @if (loading()){
+      <div class="loader-main-area">
+        <div class="loader">
+          <img src="assets/images/logo/big-logo-black-yellow-circle-removebg.png" alt="loader logo">
+        </div>
       </div>
-    </div>
+    }
   `,
   styles: `
   .loader-main-area { 
@@ -68,5 +71,5 @@ import { LoaderService } from './loader.service';
 })
 export class Loader {
   private loader = inject(LoaderService);
-  loading = computed(() => this.loader.isLoading);
+  loading = this.loader.isLoading;
 }
