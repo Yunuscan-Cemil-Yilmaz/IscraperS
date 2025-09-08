@@ -12,20 +12,8 @@
         display: flex;
         width: 100%;
     }
-    .sidebar-main { 
-        display: flex;
-        flex-direction: column;
+    .content-area {
+        padding: 25px;
         overflow: auto;
-
-        transition: all .3s ease;
-        &.sidebar-open {
-            width: 200px;
-            height: 100%;
-        }
-
-        background-color: var(--white);
-    }
-    .content-area { 
-
     }
 }

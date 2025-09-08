@@ -30,6 +30,31 @@ html {
     scroll-behavior: smooth;
 }
 
+html {
+  scrollbar-width: thin;
+//   scrollbar-color: var(--primary) var(--white);
+}
+
+::-webkit-scrollbar {
+  width: 4px !important;
+  height: 4px !important; 
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: aqua;
+  border-radius: 8px;
+  border: 2px solid var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
 @media (max-width: 1200px) { html { font-size: 18px; } }
 @media (max-width: 992px) { html { font-size: 18px; } }
 @media (max-width: 768px) { html { font-size: 17px; } }
