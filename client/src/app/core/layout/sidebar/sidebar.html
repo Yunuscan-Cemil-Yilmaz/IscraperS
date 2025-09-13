@@ -1,8 +1,41 @@
-<div class="sidebar-main sidebar-close">
+<div #sidebar class="sidebar-main sidebar-open">
     <div class="sidebar">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, veritatis obcaecati! Sequi, minus illo? Maiores officia illo quos praesentium fugit! Praesentium ullam debitis, qui sapiente, repudiandae ipsam ad nostrum accusantium hic veritatis laboriosam officia aliquid ea commodi quod optio excepturi ducimus ratione consequuntur tempora odit molestias magnam. Laudantium ipsam possimus saepe animi vel voluptatibus at facere, libero natus fugiat magnam recusandae perferendis perspiciatis debitis omnis dolor praesentium unde error beatae reprehenderit, rem, doloribus minima ipsum. Eos nulla vero commodi cupiditate laboriosam saepe aspernatur distinctio dicta non, repellendus minima! Saepe tempora minus magni voluptas tenetur ut consectetur eum, culpa dolor ratione.
+        @for (link of linkRepo; track $index) {
+            @if(link.linkType === 'menu'){
+                <ng-container *ngTemplateOutlet="menuTpl; context: { $implicit: link }"></ng-container>
+            } @else if(link.linkType === 'single'){
+                <ng-container *ngTemplateOutlet="singleTpl; context: { $implicit: link }"></ng-container>
+            }
+        }
     </div>
-    <div class="toggle-sidebar-icon">
+    <div class="toggle-sidebar-icon" (click)="toggleSidebar(sidebar)">
         <img src="assets/images/logo/mini-logo-black-yellow-removebg.png" alt="">
     </div>
 </div>
+
+
+<ng-template #menuTpl let-link>
+    <div class="link-base-bar link-bar-close">
+        <div class="link-main-bar" 
+        [class.active]="link.isActive" (click)="toggleSidebarLinkBar($event)">
+            <i class="{{ link.menuIcon }}"></i>
+            <span>{{ link.menuTitle }}</span>
+            <i class="link-bar-toggle-arrow-icon fa-solid fa-angle-down"></i>
+        </div>
+        <div class="link-list-div">
+            @for (subLink of (link.subLinks ?? []); track $index) {
+                <div class="link-list-element">
+                    <a [routerLink]="subLink.linkUrl">{{ subLink.linkText }}</a>
+                </div>
+            }
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #singleTpl let-link>
+    <a routerLink="{{ link.linkUrl }}" class="single-link-element"
+    [class.active]="link.isActive">
+        <i class="{{ link.linkIcon }}"></i>
+        <span>{{ link.linkText }}</span>
+    </a>
+</ng-template>
