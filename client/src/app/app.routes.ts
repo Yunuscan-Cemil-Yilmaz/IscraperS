@@ -1,8 +1,9 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/auth/guard/auth.guard';
 import { sslGuard } from './core/auth/guard/ssl.guard';
+import { PROFILE_ROUTES } from './features/pages/profile/profile.routes';
 
-const applicationRoutes: Routes = [
+const APPLICATION_ROUTES: Routes = [
     {
         path: '',
         loadComponent: () => import('./features/pages/home/home').then(m => m.Home),
@@ -16,6 +17,7 @@ const applicationRoutes: Routes = [
     {
         path: 'profile',
         loadComponent: () => import('./features/pages/profile/profile').then(m => m.Profile),
+        children: PROFILE_ROUTES,
         data: { preload: true }
     },
 ];
@@ -39,7 +41,7 @@ export const routes: Routes = [
                 path: '',
                 canMatch: [authGuard],
                 loadComponent: () => import('./core/layout/dashboard/dashboard').then(m => m.Dashboard),
-                children: applicationRoutes,
+                children: APPLICATION_ROUTES,
                 data: { preload: true }
             },
             {
