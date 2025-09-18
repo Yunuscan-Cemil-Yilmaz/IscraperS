@@ -15,5 +15,31 @@
     .content-area {
         padding: 25px;
         overflow: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .content-area-outlet { 
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width:996px) {
+    .dashboard-main-div {
+        .content-area { 
+            .content-area-outlet { 
+                width: 90%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:800px) {
+    .dashboard-main-div {
+        .content-area { 
+            .content-area-outlet { 
+                width: 100%;
+            }
+        }
     }
 }
