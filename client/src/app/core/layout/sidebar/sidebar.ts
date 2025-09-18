@@ -87,17 +87,29 @@ export class Sidebar {
     lb.classList.remove("link-bar-open");
     lb.classList.remove("link-bar-close");
     lb.classList.add("link-bar-close");
+    const icon = lb.querySelector('.link-main-bar i.link-bar-toggle-arrow-icon') as HTMLElement;
+    icon?.classList.remove('fa-angle-down');
+    icon?.classList.remove('fa-angle-up');
+    icon?.classList.add('fa-angle-down');
   } 
 
   public toggleSidebarLinkBar = (event: Event): void => {
     const linkBar = (event.target as HTMLElement).closest('.link-base-bar') as HTMLElement;
     const icon = linkBar.querySelector('.link-main-bar i.link-bar-toggle-arrow-icon') as HTMLElement;
     if(!linkBar) return;
+    const sidebar = linkBar.closest('.sidebar')?.closest('.sidebar-main') as HTMLElement;
+    const isOpenSidebar = sidebar?.classList.contains("sidebar-open");
     const isOpen = linkBar?.classList.contains('link-bar-open');
     this.clearSidebarLinkbar(linkBar, icon);
     if(isOpen) this.closeSidebarLinkbar(linkBar, icon);
-    else this.openSidebarLinkbar(linkBar, icon);
-    console.log(linkBar);
+    else {
+      if(isOpenSidebar) this.openSidebarLinkbar(linkBar, icon);
+      else {
+        this.toggleSidebar(sidebar);
+        this.clearSidebarLinkbar(linkBar, icon);
+        this.openSidebarLinkbar(linkBar, icon);
+      }
+    }
   }
 
   private clearSidebarLinkbar = (lb: HTMLElement, icon: HTMLElement): void => {
