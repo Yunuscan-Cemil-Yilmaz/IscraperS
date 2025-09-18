@@ -1,0 +1,52 @@
+<div class="topbar-main">
+    <a routerLink="/" class="img-link-area">
+        <picture>
+            <!-- mobile logo for 420px and below -->
+            <source
+            media="(max-width: 420px)"
+            srcset="
+                assets/images/logo/mini-logo-black-yellow-removebg.png,
+            ">
+
+            <!-- normal logo -->
+            <img
+            src="assets/images/logo/big-logo-black-yellow-removebg.png"
+            alt="logo"
+            class="logo-img-link"
+            width="160" height="40">
+        </picture>
+    </a>
+
+    <div class="top-bar-user-card">
+        <a routerLink="/profile" class="user-information text-white">
+            <div class="user-name">
+                Yunuscan Cemil
+            </div>
+            <div class="user-surname">
+                Yilmaz
+            </div>
+        </a>
+        <div class="toggle-topbar-menu-icon" (click)="toggleTopbarMenu(toggleIcon, menu)">
+            <i #toggleIcon class="fa-solid fa-angle-down topbar-toggle-icon"></i>
+        </div>
+        <div #menu class="topbar-menu topbar-menu-close">
+            <a routerLink="/profile">
+                <span>Profile</span>
+            </a>
+            <hr>
+            <a routerLink="/profile">
+                <span>Profile</span>
+            </a>
+            <hr>
+            <a routerLink="/profile">
+                <span>Profile</span>
+            </a>
+            <hr>
+            <a routerLink="/profile">
+                <span>Profile</span>
+            </a>
+            <hr>
+            <a>Sign Out</a>
+        </div>
+    </div>
+</div>
