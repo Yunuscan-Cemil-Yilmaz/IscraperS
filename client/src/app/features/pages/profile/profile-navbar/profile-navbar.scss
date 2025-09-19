@@ -1,0 +1,95 @@
+.profile-navbar-main-area { 
+    width: 100%;
+    padding: 15px;
+    background-color: var(--white);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    border-radius: 15px;
+
+    .user-area { 
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        justify-content: start;
+        gap: 15px;
+        .profile-icon-div {
+            width: 70px;
+            min-width: 70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, var(--gradient-purple), var(--primary-light));
+            i {
+                font-size: 30px;
+                color: var(--white);
+            }
+        }
+    }
+
+    .profile-navbar-div { 
+        width: 100%;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        a { 
+            position: relative;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 15px;
+
+            text-decoration: none;
+            color: var(--black);
+            padding: 8px;
+            border-radius: 12px;
+            cursor: pointer;
+
+            z-index: 1;
+            overflow: hidden;  
+            transition: all .3s ease;
+
+            > * {
+                position: relative;
+                z-index: 1;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to right, var(--gradient-purple), var(--primary-light));
+                opacity: 0;
+                transition: opacity .3s ease;
+                z-index: 0;
+                border-radius: inherit;
+                pointer-events: none;
+                z-index: 0;
+            }
+
+            &:hover {
+                color: var(--white) !important;
+                &::before { opacity: 1; }
+            }
+            &.active {
+                color: var(--white) !important;
+                &::before { opacity: 1; }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    .profile-navbar-main-area {
+        .user-area {
+            flex-direction: column;
+            font-size: 12px;
+        }
+    }
+}

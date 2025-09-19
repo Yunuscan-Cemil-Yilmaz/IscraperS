@@ -7,6 +7,8 @@ $brand-warning:   #F59E0B;
 $brand-danger:    #EF4444;
 $brand-info:      #06B6D4;
 
+$gradient-purple: #6a11cb;
+
 $body-bg:    #F5F5F5;
 $body-color: #0F172A;
 
@@ -60,6 +62,8 @@ $theme-colors: (
   --primary:         #{$primary};
   --primary-light:   #{$primary-light};
   --primary-dark:    #{$primary-dark};
+
+  --gradient-purple: #{$gradient-purple};
 
   --secondary:       #{$secondary};
   --secondary-light: #{$secondary-light};

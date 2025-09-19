@@ -5,6 +5,7 @@
     flex-direction: column;
     .top-bar{
         height: 70px;
+        background: linear-gradient(to right, var(--gradient-purple), var(--primary-light));
     }
     .content-bar { 
         height: calc(100% - 70px);

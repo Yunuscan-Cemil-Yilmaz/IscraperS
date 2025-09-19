@@ -1,1 +1,28 @@
-<p>profile-navbar works!</p>
+<div class="profile-navbar-main-area">
+    <div class="user-area">
+        <div class="profile-icon-div rounded-circle">
+            <i class="fa-regular fa-user"></i>
+        </div>
+        <div class="profile-name-mail">
+            <div>Yunuscan Cemil Yilmaz</div>
+            <div class="text-secondary">yilmazyunuscancemil00@gmail.com</div>
+        </div>
+    </div>
+    <div class="profile-navbar-div">
+        <a routerLink="/profile" class="profile-navbar-link"
+        [class.active]="isInformation">
+            <i class="fa-solid fa-circle-info"></i>
+            <div>Information</div>
+        </a>
+        <a routerLink="/profile/my-scrapers" class="profile-navbar-link"
+        [class.active]="isScrapers">
+            <i class="fa-solid fa-globe"></i>
+            <div>My Scrapers/Datasets</div>
+        </a>
+        <a routerLink="/profile/profile-settings" class="profile-navbar-link"
+        [class.active]="isSettings">
+            <i class="fa-solid fa-gear"></i>
+            <div>Account Settings</div>
+        </a>
+    </div>
+</div>
