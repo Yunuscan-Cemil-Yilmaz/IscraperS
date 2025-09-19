@@ -1,0 +1,26 @@
+.about-me-main-area { 
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 25px;
+    width: 100%;
+    .about-me-card { 
+        padding: 15px;
+        background-color: var(--white);
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .about-me-card-info {
+            .about-me-card-info-data { 
+                font-size: 30px;
+            }
+        }
+        .about-me-card-icon-div {
+            i {
+                color: var(--primary);
+                font-size: 40px;
+            }
+        }
+    }
+}
