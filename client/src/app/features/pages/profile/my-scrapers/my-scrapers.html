@@ -1,1 +1,56 @@
-<p>my-scrapers works!</p>
+<div class="scraper-table card shadow-sm p-3">
+  <h5 class="mb-3">My Scrapers</h5>
+  <div class="table-responsive">
+
+      <table class="table table-hover align-middle">
+          <thead>
+              <tr>
+                  <th>SCRAPER ADI</th>
+                  <th>URL</th>
+                  <th>DURUM</th>
+                  <th>SON ÇALIŞMA</th>
+                  <th>KAYIT SAYISI</th>
+                  <th>İŞLEMLER</th>
+                </tr>
+            </thead>
+            <tbody>  
+                <tr *ngFor="let scraper of scrapersRepo">
+                    <td>{{ scraper.name }}</td>
+                    <td class="text-muted">{{ scraper.url }}</td>
+                    <td>
+                        <span 
+                        class="badge"
+                        [ngClass]="{
+                            'bg-success': scraper.status === 1,
+                            'bg-warning text-dark': scraper.status === 2,
+                            'bg-primary': scraper.status === 3
+                        }">
+                        {{ 
+                            scraper.status === 1
+                            ? 'Active'
+                            : scraper.status === 2
+                            ? 'Stopped'
+                                :  scraper.status === 3
+                                ? 'Completed'
+                                : ''
+                        }}
+                        </span>
+                    </td>
+                    <td>{{ scraper.lastRun }}</td>
+                    <td>{{ scraper.recordCount | number }}</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary me-1">
+                            <i class="fa fa-play"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary me-1">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+</div>
+</div>
