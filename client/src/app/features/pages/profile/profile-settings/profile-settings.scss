@@ -1,0 +1,12 @@
+.profile-settings-main-area { 
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 25px;
+    width: 100%;
+    .profile-settings-card { 
+        padding: 15px;
+        background-color: var(--white);
+        border-radius: 15px;
+    }
+}

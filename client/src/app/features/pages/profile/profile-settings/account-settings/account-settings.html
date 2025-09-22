@@ -1,0 +1,152 @@
+<div class="card-body">
+    <h5 class="card-title mb-4">Account Settings</h5>
+
+    <div class="mb-3">
+    <label class="form-label">Name Surname</label>
+    <input type="text" class="form-control" value="Ahmet Yılmaz" disabled>
+    </div>
+
+    <div class="mb-4">
+    <label class="form-label">E-mail</label>
+    <input type="email" class="form-control" value="ahmet@example.com" disabled>
+    </div>
+    
+    <div class="profile-account-settings-btns-div">
+        <button type="button" class="btn btn-primary" (click)="openPanel()">
+            Edit
+        </button>
+
+        <a routerLink="/" class="btn btn-primary">Reset Password</a>
+    </div>
+</div>
+
+<!-- Overlay + Panel -->
+<div class="edit-overlay" *ngIf="showEdit" (click)="closePanel()" aria-hidden="false" role="dialog" aria-modal="true">
+<!-- Panel (click bubble'ını kes) -->
+<div class="edit-panel" (click)="$event.stopPropagation()">
+    <div class="edit-panel__header">
+    <h5 class="m-0">Edit Account Settings</h5>
+    <button class="btn btn-sm btn-outline-secondary" (click)="closePanel()" aria-label="Kapat">✕</button>
+    </div>
+
+    <div class="edit-panel__body">
+    <!-- Dummy Form: pek çok eleman içerir -->
+    <form novalidate>
+        <div class="row g-3">
+        <div class="col-md-6">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" placeholder="Ad">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Surname</label>
+            <input type="text" class="form-control" placeholder="Soyad">
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">E-mail</label>
+            <input type="email" class="form-control" placeholder="ornek@site.com">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Phone Mumber</label>
+            <input type="tel" class="form-control" placeholder="+90 5xx xxx xx xx">
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" placeholder="Yeni şifre">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Birth Date</label>
+            <input type="date" class="form-control">
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Time Zone</label>
+            <select class="form-select">
+            <option value="">Select...</option>
+            <option>Europe/Istanbul (GMT+3)</option>
+            <option>Europe/Berlin (GMT+1)</option>
+            <option>America/New_York (GMT-5)</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Selected Language</label>
+            <select class="form-select" multiple size="3">
+            <option>Türkçe</option>
+            <option>English</option>
+            <option>Deutsch</option>
+            <option>Français</option>
+            </select>
+            <div class="form-text">multiple select with Ctrl/Cmd.</div>
+        </div>
+
+        <div class="col-12">
+            <label class="form-label">About Me</label>
+            <textarea class="form-control" rows="3" placeholder="I'm working on ..."></textarea>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label d-block">Bildirimler</label>
+            <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="notifEmail" checked>
+            <label class="form-check-label" for="notifEmail">E-mail notification</label>
+            </div>
+            <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="notifSms">
+            <label class="form-check-label" for="notifSms">SMS notification</label>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label d-block">Theme</label>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="theme" id="light" checked>
+            <label class="form-check-label" for="light">Light</label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="theme" id="dark">
+            <label class="form-check-label" for="dark">Dark</label>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Profile Photo</label>
+            <input type="file" class="form-control">
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Usage Warning Notification Limit</label>
+            <input type="range" class="form-range">
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Selected Time</label>
+            <input type="time" class="form-control">
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">User Name</label>
+            <div class="input-group">
+            <span class="input-group-text">@</span>
+            <input type="text" class="form-control" placeholder="user">
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="kvkk">
+            <label class="form-check-label" for="kvkk">
+                I have read the terms of use and accept them.
+            </label>
+            </div>
+        </div>
+        </div>
+    </form>
+    </div>
+
+    <div class="edit-panel__footer">
+    <button class="btn btn-secondary" (click)="closePanel()">Cancel</button>
+    <button class="btn btn-primary">Apply</button>
+    </div>
+</div>
