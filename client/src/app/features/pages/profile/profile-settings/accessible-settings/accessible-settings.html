@@ -1,0 +1,28 @@
+<div class="card-body">
+    <h5 class="card-title mb-4">Accessible Settings</h5>
+    <hr class="text-secondary">
+    <div class="accessible-list-area mt-3">
+        @for(item of repo; track $index) {
+            <div class="accessible-item-div">
+                <div class="information">
+                    <div class="information-img-div">
+                        <img src="{{ item.icon ? item.icon : '' }}">
+                    </div>
+                    <div class="information-info-text">
+                        <div class="text">{{ item.name }}</div>
+                        <div class="text-secondary">{{ item.isFree ? 'UnLimited to usage' : 'Limited usage'}}</div>
+                        <div class="text-secondary">{{ item.isAvaible ? 'Ready to usage' : 'It\'s not ready for usage yet'}}</div>
+                    </div>
+                </div>
+                <div class="set-access-setting">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" 
+                        id="notifEmail"
+                        [checked]="!!item.isUsing">
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

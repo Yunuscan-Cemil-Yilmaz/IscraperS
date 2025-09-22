@@ -13,15 +13,13 @@ export class AccountSettings {
 
   openPanel() {
     this.showEdit = true;
-    document.body.classList.add('modal-open');
   }
 
   closePanel() {
     this.showEdit = false;
-    document.body.classList.remove('modal-open');
   }
 
   ngOnDestroy(): void {
-    document.body.classList.remove('modal-open');
+    this.showEdit = false;
   }
 }
